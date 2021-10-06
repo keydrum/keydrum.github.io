@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="application-name" content="KeyDrum Pro" />
+    <meta name="description" content="Free Keyboard Drumming Website" />
+    <meta name="keywords" content="Drum, Keyboard, Drumming" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="awThev" />
+    <title>KeyDrum</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <img
+          class="logo"
+          src="./ressources/keydrum_logo_black.jpg"
+          alt="KeyDrum"
+        />
+      </h1>
+    </header>
+
+    <main>
+      <!-- dialogBtn -->
+      <div id="dialogBtn" class="dialog">
+        <div class="dialogContent">
+          <span id="dialogBtnVarContent"></span>
+          <button id="confirmBtn" class="buttons">Confirm</button>
+          <button id="cancelBtn" class="buttons">Cancel</button>
+        </div>
+      </div>
+
+      <!-- dialogAlert -->
+      <div id="dialogAlert" class="dialog">
+        <div class="dialogContent">
+          <span id="dialogAlertVarContent"></span>
+          <button id="okBtn" class="buttons">OK</button>
+        </div>
+      </div>
+
+      <!-- "Edit" Modal -->
+      <div id="editModal" class="modal">
+        <!-- Modal content -->
+        <div class="modalContent">
+          <h3>Key binding Edition</h3>
+          <p style="color: red">/!\ Avoid duplicates /!\</p>
+          <div>
+            <table id="keyBindingTableEdit" class="keyBindingTableSkin">
+              <tr>
+                <th>Drum parts</th>
+                <th>Left hand / feet</th>
+                <th>Right hand / feet</th>
+              </tr>
+              <tr>
+                <td>Bass drum</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftBassEdit"
+                    maxlength="1"
+                    value="F"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightBassEdit"
+                    maxlength="1"
+                    value="L"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Snare drum</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftSnareEdit"
+                    maxlength="1"
+                    value="B"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightSnareEdit"
+                    maxlength="1"
+                    value=";"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Snare ghost note</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftGhostEdit"
+                    maxlength="1"
+                    value="V"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightGhostEdit"
+                    maxlength="1"
+                    value=":"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Hi-Hat</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftHiHatEdit"
+                    maxlength="1"
+                    value="D"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightHiHatEdit"
+                    maxlength="1"
+                    value="M"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Opened Hi-Hat</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftHiHatOpenedEdit"
+                    maxlength="1"
+                    value="S"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightHiHatOpenedEdit"
+                    maxlength="1"
+                    value="ù"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Press Hi-Hat</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftHiHatPressEdit"
+                    maxlength="1"
+                    value="Q"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightHiHatPressEdit"
+                    maxlength="1"
+                    value=""
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>High Tom</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftHighTomEdit"
+                    maxlength="1"
+                    value="G"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightHighTomEdit"
+                    maxlength="1"
+                    value="H"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Mid Tom</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftMidTomEdit"
+                    maxlength="1"
+                    value="J"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightMidTomEdit"
+                    maxlength="1"
+                    value="K"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Floor Tom</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftFloorTomEdit"
+                    maxlength="1"
+                    value="N"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightFloorTomEdit"
+                    maxlength="1"
+                    value=","
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Ride Cymbal</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftRideEdit"
+                    maxlength="1"
+                    value="E"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightRideEdit"
+                    maxlength="1"
+                    value="P"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Left Crash Cymbal</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftLeftCrashEdit"
+                    maxlength="1"
+                    value="R"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightLeftCrashEdit"
+                    maxlength="1"
+                    value="O"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Right Crash Cymbal</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftRightCrashEdit"
+                    maxlength="1"
+                    value="T"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightRightCrashEdit"
+                    maxlength="1"
+                    value="I"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>China</td>
+                <td>
+                  <input
+                    type="text"
+                    id="leftChinaEdit"
+                    maxlength="1"
+                    value="Y"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="rightChinaEdit"
+                    maxlength="1"
+                    value="U"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <button id="applyEdit" class="buttons">Apply</button>
+          <button id="resetEdit" class="buttons">Reset to default</button>
+          <button id="cancelEdit" class="buttons">Cancel</button>
+        </div>
+      </div>
+
+      <div class="keyBinding">
+        <h3>Key binding</h3>
+        <table id="keyBindingTable" class="keyBindingTableSkin">
+          <tr>
+            <th>Drum parts</th>
+            <th>Left hand / feet</th>
+            <th>Right hand / feet</th>
+          </tr>
+          <tr>
+            <td>Bass drum</td>
+            <td id="leftBass">F</td>
+            <td id="rightBass">L</td>
+          </tr>
+          <tr>
+            <td>Snare drum</td>
+            <td id="leftSnare">B</td>
+            <td id="rightSnare">;</td>
+          </tr>
+          <tr>
+            <td>Snare ghost note</td>
+            <td id="leftGhost">V</td>
+            <td id="rightGhost">:</td>
+          </tr>
+          <tr>
+            <td>Hi-Hat</td>
+            <td id="leftHiHat">D</td>
+            <td id="rightHiHat">M</td>
+          </tr>
+          <tr>
+            <td>Opened Hi-Hat</td>
+            <td id="leftHiHatOpened">S</td>
+            <td id="rightHiHatOpened">ù</td>
+          </tr>
+          <tr>
+            <td>Press Hi-Hat</td>
+            <td id="leftHiHatPress">Q</td>
+            <td id="rightHiHatPress"></td>
+          </tr>
+          <tr>
+            <td>High Tom</td>
+            <td id="leftHighTom">G</td>
+            <td id="rightHighTom">H</td>
+          </tr>
+          <tr>
+            <td>Mid Tom</td>
+            <td id="leftMidTom">J</td>
+            <td id="rightMidTom">K</td>
+          </tr>
+          <tr>
+            <td>Floor Tom</td>
+            <td id="leftFloorTom">N</td>
+            <td id="rightFloorTom">,</td>
+          </tr>
+          <tr>
+            <td>Ride Cymbal</td>
+            <td id="leftRide">E</td>
+            <td id="rightRide">P</td>
+          </tr>
+          <tr>
+            <td>Left Crash Cymbal</td>
+            <td id="leftLeftCrash">R</td>
+            <td id="rightLeftCrash">O</td>
+          </tr>
+          <tr>
+            <td>Right Crash Cymbal</td>
+            <td id="leftRightCrash">T</td>
+            <td id="rightRightCrash">I</td>
+          </tr>
+
+          <tr>
+            <td>China</td>
+            <td id="leftChina">Y</td>
+            <td id="rightChina">U</td>
+          </tr>
+        </table>
+
+        <!-- Trigger to open the "Reset KeyBindingTable" Dialog -->
+        <button id="resetKeyBinding" class="buttons">Reset Key Binding</button>
+
+        <!-- Trigger to open the "Edit" Modal -->
+        <button id="edit" class="buttons">Edit</button>
+      </div>
+
+      <div class="keyBindingPicture">
+        <h3>Key Binding Picture</h3>
+        <figure id="drumKit">
+          <img src="./ressources/drumkit.jpg" alt="Drum kit mapping" />
+          <figcaption>Roland® TD-17KVX E-Drum Set</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <section>
+      <div class="kickIt">
+        <p>Kick your keyboard !</p>
+        <p>Key pressed: <span id="keyPressed"></span></p>
+      </div>
+    </section>
+
+    <footer>
+      <img
+        class="logoFooter"
+        src="./ressources/keydrum_logo.png"
+        alt="KeyDrum logo"
+      />
+      <p>Version 0.4.2</p>
+      <p>KeyDrum by awThev | 2021 | All rights reserved</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
