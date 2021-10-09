@@ -104,7 +104,7 @@ document.addEventListener("keypress", (e) => {
         break;
       default:
         keyPressed.textContent = "Missed!";
-        sound("fart");
+        // sound("fart");
         break;
     }
   } else {
@@ -347,9 +347,5 @@ applyEdit.onclick = () => {
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
     };
-
-    // setTimeout(function () {
-    //   dialogAlert.style.display = "none";
-    // }, 1000);
   }
 };
