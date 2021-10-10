@@ -7,6 +7,11 @@ const sound = (key) => {
   audio.play();
 };
 
+(function () {
+  resetKeyBindingFunc();
+  resetEditFunction();
+})();
+
 // Pour la fonction Apply
 const inputs = document.querySelectorAll(
   '#keyBindingTableEdit input[type="text"]'
@@ -113,7 +118,49 @@ document.addEventListener("keypress", (e) => {
 });
 
 //---------- ResetKeyBinging function ----------//
-//---------- pour simplifier la gestion des touches, retirer les touches en dur de l'HTML et jouer le reset au chargement de la page ----------//
+
+function resetKeyBindingFunc() {
+  leftBass.innerHTML = "F";
+  rightBass.innerHTML = "L";
+
+  leftSnare.innerHTML = "B";
+  rightSnare.innerHTML = ";";
+
+  leftGhost.innerHTML = "V";
+  rightGhost.innerHTML = ":";
+
+  leftHiHat.innerHTML = "D";
+  rightHiHat.innerHTML = "M";
+
+  leftHiHatOpened.innerHTML = "S";
+  rightHiHatOpened.innerHTML = "ù";
+
+  leftHiHatPress.innerHTML = "Q";
+  rightHiHatPress.innerHTML = "";
+
+  leftHighTom.innerHTML = "G";
+  rightHighTom.innerHTML = "H";
+
+  leftMidTom.innerHTML = "J";
+  rightMidTom.innerHTML = "K";
+
+  leftFloorTom.innerHTML = "N";
+  rightFloorTom.innerHTML = ",";
+
+  leftRide.innerHTML = "E";
+  rightRide.innerHTML = "P";
+
+  leftLeftCrash.innerHTML = "R";
+  rightLeftCrash.innerHTML = "O";
+
+  leftRightCrash.innerHTML = "T";
+  rightRightCrash.innerHTML = "I";
+
+  leftChina.innerHTML = "Y";
+  rightChina.innerHTML = "U";
+}
+
+//---------- Apply ResetKeyBinging function ----------//
 
 resetKeyBinding.onclick = () => {
   dialogBtn.style.display = "block";
@@ -124,44 +171,7 @@ resetKeyBinding.onclick = () => {
   <p>Reset key binding to default?</p>`;
 
   confirmBtn.onclick = function () {
-    leftBass.innerHTML = "F";
-    rightBass.innerHTML = "L";
-
-    leftSnare.innerHTML = "B";
-    rightSnare.innerHTML = ";";
-
-    leftGhost.innerHTML = "V";
-    rightGhost.innerHTML = ":";
-
-    leftHiHat.innerHTML = "D";
-    rightHiHat.innerHTML = "M";
-
-    leftHiHatOpened.innerHTML = "S";
-    rightHiHatOpened.innerHTML = "ù";
-
-    leftHiHatPress.innerHTML = "Q";
-    rightHiHatPress.innerHTML = "";
-
-    leftHighTom.innerHTML = "G";
-    rightHighTom.innerHTML = "H";
-
-    leftMidTom.innerHTML = "J";
-    rightMidTom.innerHTML = "K";
-
-    leftFloorTom.innerHTML = "N";
-    rightFloorTom.innerHTML = ",";
-
-    leftRide.innerHTML = "E";
-    rightRide.innerHTML = "P";
-
-    leftLeftCrash.innerHTML = "R";
-    rightLeftCrash.innerHTML = "O";
-
-    leftRightCrash.innerHTML = "T";
-    rightRightCrash.innerHTML = "I";
-
-    leftChina.innerHTML = "Y";
-    rightChina.innerHTML = "U";
+    resetKeyBindingFunc();
 
     dialogBtn.style.display = "none";
 
@@ -183,9 +193,53 @@ resetKeyBinding.onclick = () => {
 };
 
 //---------- ResetEdit function ----------//
+
+function resetEditFunction() {
+  document.getElementById("leftBassEdit").value = "F";
+  document.getElementById("rightBassEdit").value = "L";
+
+  document.getElementById("leftSnareEdit").value = "B";
+  document.getElementById("rightSnareEdit").value = ";";
+
+  document.getElementById("leftGhostEdit").value = "V";
+  document.getElementById("rightGhostEdit").value = ":";
+
+  document.getElementById("leftHiHatEdit").value = "D";
+  document.getElementById("rightHiHatEdit").value = "M";
+
+  document.getElementById("leftHiHatOpenedEdit").value = "S";
+  document.getElementById("rightHiHatOpenedEdit").value = "ù";
+
+  document.getElementById("leftHiHatPressEdit").value = "Q";
+  document.getElementById("rightHiHatPressEdit").value = "";
+
+  document.getElementById("leftHighTomEdit").value = "G";
+  document.getElementById("rightHighTomEdit").value = "H";
+
+  document.getElementById("leftMidTomEdit").value = "J";
+  document.getElementById("rightMidTomEdit").value = "K";
+
+  document.getElementById("leftFloorTomEdit").value = "N";
+  document.getElementById("rightFloorTomEdit").value = ",";
+
+  document.getElementById("leftRideEdit").value = "E";
+  document.getElementById("rightRideEdit").value = "P";
+
+  document.getElementById("leftLeftCrashEdit").value = "R";
+  document.getElementById("rightLeftCrashEdit").value = "O";
+
+  document.getElementById("leftRightCrashEdit").value = "T";
+  document.getElementById("rightRightCrashEdit").value = "I";
+
+  document.getElementById("leftChinaEdit").value = "Y";
+  document.getElementById("rightChinaEdit").value = "U";
+}
+
 //---------- pour simplifier la gestion des touches, déclarer des constantes defaultLeft... ----------//
 // Il y a surement une carte à jouer avec inputs.defaultValue)
 // document.querySelectorAll('#keyBindingTable input').reset();
+
+//---------- Use ResetEdit in modal ----------//
 
 resetEdit.onclick = () => {
   dialogBtn.style.display = "block";
@@ -193,47 +247,10 @@ resetEdit.onclick = () => {
   document.getElementById(
     "dialogBtnVarContent"
   ).innerHTML = `<h3>Reset key binding edition</h3>
-  <p>Reset key binding edition to default?</p>`;
+      <p>Reset key binding edition to default?</p>`;
 
   confirmBtn.onclick = function () {
-    document.getElementById("leftBassEdit").value = "F";
-    document.getElementById("rightBassEdit").value = "L";
-
-    document.getElementById("leftSnareEdit").value = "B";
-    document.getElementById("rightSnareEdit").value = ";";
-
-    document.getElementById("leftGhostEdit").value = "V";
-    document.getElementById("rightGhostEdit").value = ":";
-
-    document.getElementById("leftHiHatEdit").value = "D";
-    document.getElementById("rightHiHatEdit").value = "M";
-
-    document.getElementById("leftHiHatOpenedEdit").value = "S";
-    document.getElementById("rightHiHatOpenedEdit").value = "ù";
-
-    document.getElementById("leftHiHatPressEdit").value = "Q";
-    document.getElementById("rightHiHatPressEdit").value = "";
-
-    document.getElementById("leftHighTomEdit").value = "G";
-    document.getElementById("rightHighTomEdit").value = "H";
-
-    document.getElementById("leftMidTomEdit").value = "J";
-    document.getElementById("rightMidTomEdit").value = "K";
-
-    document.getElementById("leftFloorTomEdit").value = "N";
-    document.getElementById("rightFloorTomEdit").value = ",";
-
-    document.getElementById("leftRideEdit").value = "E";
-    document.getElementById("rightRideEdit").value = "P";
-
-    document.getElementById("leftLeftCrashEdit").value = "R";
-    document.getElementById("rightLeftCrashEdit").value = "O";
-
-    document.getElementById("leftRightCrashEdit").value = "T";
-    document.getElementById("rightRightCrashEdit").value = "I";
-
-    document.getElementById("leftChinaEdit").value = "Y";
-    document.getElementById("rightChinaEdit").value = "U";
+    resetEditFunction();
 
     dialogBtn.style.display = "none";
 
