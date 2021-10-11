@@ -287,7 +287,7 @@ applyEdit.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Warning!</h3>
-    <p>Please remove dupplicate keys!</p>`;
+    <p>Please remove duplicate keys!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
