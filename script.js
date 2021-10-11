@@ -166,8 +166,8 @@ resetKeyBinding.onclick = () => {
 
   document.getElementById(
     "dialogBtnVarContent"
-  ).innerHTML = `<h3>Reset key binding</h3>
-  <p>Reset key binding to default?</p>`;
+  ).innerHTML = `<h3>Reset key binding table</h3>
+  <p>Reset key binding table to default?</p>`;
 
   confirmBtn.onclick = function () {
     resetKeyBindingFunc();
@@ -179,7 +179,7 @@ resetKeyBinding.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Success !</h3>
-    <p>The key binding has been reset!</p>`;
+    <p>The key binding table has been reset!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
@@ -245,8 +245,8 @@ resetEdit.onclick = () => {
 
   document.getElementById(
     "dialogBtnVarContent"
-  ).innerHTML = `<h3>Reset key binding table</h3>
-      <p>Reset key binding table to default?</p>`;
+  ).innerHTML = `<h3>Reset key binding</h3>
+      <p>Reset key binding to default?</p>`;
 
   confirmBtn.onclick = function () {
     resetEditFunction();
@@ -258,7 +258,7 @@ resetEdit.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Success!</h3>
-    <p>The key binding table has been reset!</p>`;
+    <p>The key binding has been reset!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
@@ -287,7 +287,7 @@ applyEdit.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Warning!</h3>
-    <p>Please remove dupplicated keys!</p>`;
+    <p>Please remove dupplicate keys!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
@@ -358,7 +358,7 @@ applyEdit.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Success!</h3>
-    <p>The new key bindings have been applied!</p>`;
+    <p>The new key binding have been applied!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
