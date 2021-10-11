@@ -109,7 +109,6 @@ document.addEventListener("keypress", (e) => {
         break;
       default:
         keyPressed.textContent = "Missed!";
-        // sound("fart");
         break;
     }
   } else {
@@ -180,7 +179,7 @@ resetKeyBinding.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Success !</h3>
-    <p>The key binding has been reseted!</p>`;
+    <p>The key binding has been reset!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
@@ -246,8 +245,8 @@ resetEdit.onclick = () => {
 
   document.getElementById(
     "dialogBtnVarContent"
-  ).innerHTML = `<h3>Reset key binding edition</h3>
-      <p>Reset key binding edition to default?</p>`;
+  ).innerHTML = `<h3>Reset key binding table</h3>
+      <p>Reset key binding table to default?</p>`;
 
   confirmBtn.onclick = function () {
     resetEditFunction();
@@ -259,7 +258,7 @@ resetEdit.onclick = () => {
     document.getElementById(
       "dialogAlertVarContent"
     ).innerHTML = `<h3>Success!</h3>
-    <p>The key binding edition table has been reseted!</p>`;
+    <p>The key binding table has been reset!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
@@ -358,8 +357,8 @@ applyEdit.onclick = () => {
 
     document.getElementById(
       "dialogAlertVarContent"
-    ).innerHTML = `<h3>Success !</h3>
-    <p>The new key bindings has been applied!</p>`;
+    ).innerHTML = `<h3>Success!</h3>
+    <p>The new key bindings have been applied!</p>`;
 
     okBtn.onclick = () => {
       dialogAlert.style.display = "none";
